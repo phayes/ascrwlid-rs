@@ -26,7 +26,7 @@ pub fn sample_int<R: Rng>(weights: &[f64], n: usize, mut rng: R) -> usize {
     let spoke_gap: f64 = sum / n as f64;
 
     // next_f64() ∈ [0.0, 1.0)
-    let spin = rng.gen::<f64>() * spoke_gap;
+    let spin = rng.gen_range(0.0, 1.0) * spoke_gap;
 
     let mut i: usize = 0;
     let mut accumulated_weights = weights[0];
